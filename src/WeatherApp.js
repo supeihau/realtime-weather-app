@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import styled from '@emotion/styled';
 
 
@@ -172,5 +172,5 @@ export default WeatherApp;
 // useEffect fetchData -> fetchData -> fetchingData -> fetchCurrentWeather -> fetchWeatherForecast 
 // -> useEffect moment -> getMoment
 //按重新整理的渲染
-{/* <Refresh onClick={fetchData} isLoading={isLoading}>
-fetchData -> fetchingData -> fetchCurrentWeather -> fetchWeatherForecast API取得不同的資料 */}
+/* <Refresh onClick={fetchData} isLoading={isLoading}>
+fetchData -> fetchingData -> fetchCurrentWeather -> fetchWeatherForecast API取得不同的資料 */

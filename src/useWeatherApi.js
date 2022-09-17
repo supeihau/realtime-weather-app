@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback} from 'react';
 
 // 取得時間 地點 溫度 風速 濕度的API資料
 const fetchCurrentWeather = (locationName) => {
