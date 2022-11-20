@@ -5,7 +5,7 @@ import './index.css';
 import WeatherApp from './WeatherApp';
 // 把APP打包成PWA(漸進式網頁應用) 
 // import * as serviceWorker from './service-worker.js';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration.js'
+import * as serviceWorker from './serviceWorker'
 // import reportWebVitals form './reportWebVitals.js';
 
 const App = () => {
@@ -22,4 +22,4 @@ root.render(
 );
 
 // 把APP打包成PWA
-serviceWorkerRegistration.rigister();
+serviceWorker.register();
