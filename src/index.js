@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 //這個css會作用到全域上
 import './index.css';
 import WeatherApp from './WeatherApp';
+// 把APP打包成PWA(漸進式網頁應用) 
+// import * as serviceWorker from './service-worker.js';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration.js'
+// import reportWebVitals form './reportWebVitals.js';
 
 const App = () => {
   return(
@@ -16,3 +20,6 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// 把APP打包成PWA
+serviceWorkerRegistration.rigister();
