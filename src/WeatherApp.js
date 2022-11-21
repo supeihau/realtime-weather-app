@@ -133,7 +133,7 @@ const WeatherApp = () => {
           />
         )}
 
-        {currentPage === 'WeatherSeeting' && (
+        {currentPage === 'WeatherSetting' && (
           <WeatherSetting
             // 把縣市名稱傳入 WeatherSetting 中當作表單「地區」欄位的預設值
             cityName={currentLocation.cityName}
