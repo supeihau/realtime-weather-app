@@ -22,20 +22,12 @@
 
 ## 參考資源
 
-● 設計畫面主要參考 imgur 上的圖片 
+● 設計畫面主要參考 imgur 上的圖片 (https://imgur.com/ZLgiOyj)
 
-(https://imgur.com/ZLgiOyj)
+● 天氣圖示來自 IconFinder 上 The Weather is Nice Today 所提（https://www.iconfinder.com/iconsets/the-weather-is-nice-today）
 
-● 天氣圖示來自 IconFinder 上 The Weather is Nice Today 所提
+● 「從 Hooks 開始，讓你的網頁 React 起來」 鐵人賽系列文章 (https://ithelp.ithome.com.tw/users/20103315/ironman/2668)
 
-（https://www.iconfinder.com/iconsets/the-weather-is-nice-today）
-
-● 「從 Hooks 開始，讓你的網頁 React 起來」 鐵人賽系列文章
-
-https://ithelp.ithome.com.tw/users/20103315/ironman/2668
-
-● 中央氣象局開放資料平台之資料擷取API
-
-https://opendata.cwb.gov.tw/dist/opendata-swagger.html
+● 中央氣象局開放資料平台之資料擷取API (https://opendata.cwb.gov.tw/dist/opendata-swagger.html)
 
 
