@@ -5,12 +5,15 @@
 ## 簡介
 
 ![image](https://user-images.githubusercontent.com/98528149/203065926-74e54eca-da8e-4d0a-8a1f-d94f19afb00e.png)
+
 可以依據data-list選擇想要查看的地區。
 
 ![image](https://user-images.githubusercontent.com/98528149/203066118-63e2cb85-3409-467f-b603-b720a3f186b0.png)
+
 會回傳至介面告訴使用者該地區的溫度、風速和降雨機率。
 
 ![image](https://user-images.githubusercontent.com/98528149/203066377-a66f5a96-8cc5-4ae2-89d1-445ef5eba255.png)
+
 可以設定主題顏色，目前有淺色和深色主題。
 
 ## 啟用
