@@ -9,6 +9,7 @@ import WeatherSetting from './WeatherSetting.js';
 import { findLocation } from './utils';
 
 import { ThemeProvider } from '@emotion/react';
+import ThemeSetting from './ThemeSetting';
 
 const Container = styled.div`
   /* 在 Styled Component 中可以透過 Props 取得對的顏色 */
@@ -29,14 +30,15 @@ const theme = {
     textColor: '#828282',
   },
   dark: {
+    settingColor: '#f9f9fa',
     backgroundColor: '#1F2022',
     foregroundColor: '#121416',
     boxShadow:
       '0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.15)',
-    titleColor: '#f9f9fa',
+    titleColor: '#212121',
     temperatureColor: '#dddddd',
     textColor: '#cccccc',
-  },
+  }
 };
 
 //以太陽落下時間判斷現在是day or night ，傳回白天或是夜晚的天氣圖
@@ -88,7 +90,7 @@ const WeatherApp = () => {
   // 即使使用者重新整理瀏覽器，會從 localStorage 去取得使用者上次設定的資料。
   //localStorage 將使用者設定地區保存下來，從localStorage取出cityName
   const storageCity = localStorage.getItem('cityName');  //讀取特定資料
-  
+
   // 定義要拉取天氣資訊的地區
   // 若storageCity存在則作為currentCity的預設值，否則使用臺北市
   const [currentCity, setCurrentCity] = useState(storageCity || '臺北市');
@@ -109,18 +111,8 @@ const WeatherApp = () => {
   //判斷更換頁面(WeatherCard or WeatherSetting)
   const [currentPage, setCurrentPage] = useState('WeatherCard');
 
-  //透過 useMemo 避免每次都須重新計算取值，呼叫 getMoment 方法取得回傳值，並且帶入 dependencies
-  const moment = useMemo(() => getMoment(currentLocation.sunriseCityName), //臺北
-    [currentLocation.sunriseCityName]); //moment 回傳'day' or 'night'
-
-  //根據moment決定使用顏色主題
-  useEffect(() => {
-    console.log('useEffect moment');
-    setCurrentTheme(moment === 'day' ? 'light' : 'dark')
-  }, [moment]);
-
   // 當currentCity有改變時，儲存到localStorage中
-  useEffect(() =>{
+  useEffect(() => {
     localStorage.setItem('cityName', currentCity) //儲存資料
   }, [currentCity]);
 
@@ -135,7 +127,6 @@ const WeatherApp = () => {
           <WeatherCard
             cityName={currentLocation.cityName}
             weatherElement={WeatherElement}
-            moment={moment}
             fetchData={fetchData}
             // 把setCurrentPage從WeatherApp傳送到WeatherCard
             setCurrentPage={setCurrentPage}
@@ -153,6 +144,15 @@ const WeatherApp = () => {
           />
         )}
 
+        {currentPage === 'ThemeSetting' &&
+          <ThemeSetting
+            setCurrentTheme={setCurrentTheme}
+            // 把 setCurrentTheme 傳入ThemeSetting，讓 ThemeSetting 可以修改 CurrentTheme
+            setCurrentPage={setCurrentPage}
+          // 把setCurrentPage的狀態從WeatherApp傳送到ThemeSetting
+          />
+        }
+
       </Container>
     </ThemeProvider>
   )
@@ -169,7 +169,7 @@ export default WeatherApp;
 //當按重整按紐時，isLoading 紀錄資料回傳了嗎，決定Refresh的Icon
 
 //第一次畫面渲染
-// useEffect fetchData -> fetchData -> fetchingData -> fetchCurrentWeather -> fetchWeatherForecast 
+// useEffect fetchData -> fetchData -> fetchingData -> fetchCurrentWeather -> fetchWeatherForecast
 // -> useEffect moment -> getMoment
 //按重新整理的渲染
 /* <Refresh onClick={fetchData} isLoading={isLoading}>

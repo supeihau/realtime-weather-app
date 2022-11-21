@@ -20,7 +20,7 @@ const IconContainer = styled.div`
   /* 在這裡寫入 CSS 樣式 */
   flex-basis: 30%;
   svg{
-    max-height: 110px;
+    max-height: 160px;
   }
 `;
 
