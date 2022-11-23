@@ -18,7 +18,7 @@
 
 ## 啟用
 
-以 [http://localhost:3000](http://localhost:3000) 查看網頁效果
+以 https://supeihau.github.io/realtime-weather-app/ 查看網頁效果
 
 ## 參考資源
 
